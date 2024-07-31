@@ -10,9 +10,9 @@ def show_catalog(request):
     sort_by = request.GET.get('sort')
     if sort_by == 'name':
         context['phones'] = phones.order_by('name')
-    elif sort_by == 'price_asc':
+    elif sort_by == 'min_price':
         context['phones'] = phones.order_by('price')
-    elif sort_by == 'price_desc':
+    elif sort_by == 'max_price':
         context['phones'] = phones.order_by('-price')
     return render(request, 'catalog.html', context)
 
